@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+</head>
+<body>
+    <h1>Task List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Task Description</th>
+                <th>Task Date</th>
+                <th>Remarks</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (tasks && tasks.length > 0) { %>
+                <% tasks.forEach(task => { %>
+                    <tr>
+                        <td><%= task.employee_id %></td>
+                        <td><%= task.employee_name %></td>
+                        <td><%= task.task_description %></td>
+                        <td><%= task.task_date %></td>
+                        <td><%= task.remarks %></td>
+                    </tr>
+                <% }); %>
+            <% } else { %>
+                <tr><td colspan="5">No tasks found</td></tr>
+            <% } %>            
+        </tbody>
+    </table>
+</body>
+</html>
